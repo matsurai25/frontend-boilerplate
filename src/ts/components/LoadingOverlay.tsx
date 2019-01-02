@@ -2,13 +2,13 @@ import * as React from 'react'
 import classNames from 'classnames'
 import Lottie from './Lottie'
 import animation from './loading'
+import { sleep } from '../util'
 
 interface Props {
   isLoading: boolean
 }
 
 interface State {
-  isLoadingAnimationStarted: boolean
   isLoadingAnimationEnded: boolean
 }
 
@@ -16,35 +16,28 @@ export default class extends React.Component<Props, State> {
   constructor(props) {
     super(props)
     this.state = {
-      isLoadingAnimationStarted: false,
       isLoadingAnimationEnded: false
     }
   }
 
-  componentDidUpdate(prevProps: Props) {
+  async componentDidUpdate(prevProps: Props) {
     if (
       prevProps.isLoading === true &&
       this.props.isLoading === false
     ) {
-      setTimeout(() => {
-        this.setState({ isLoadingAnimationStarted: true })
-      }, 1000)
-      setTimeout(() => {
-        this.setState({ isLoadingAnimationEnded: true })
-      }, 2000)
+      await sleep(300)
+      this.setState({ isLoadingAnimationEnded: true })
     }
   }
 
   render() {
-    const {
-      isLoadingAnimationStarted,
-      isLoadingAnimationEnded
-    } = this.state
+    const { isLoadingAnimationEnded } = this.state
+    const { isLoading } = this.props
     return isLoadingAnimationEnded ? null : (
       <div
         className={classNames(
           'cover',
-          isLoadingAnimationStarted && 'loaded'
+          !isLoading && 'loaded'
         )}
       >
         <Lottie

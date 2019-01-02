@@ -15,7 +15,7 @@
   transition: opacity 0.3s ease-in-out 0s,
     transform 0.3s ease-in-out 0.3s;
 
-  &.animated {
+  &.appeared {
     opacity: 1;
     background-color: #00f;
     transform: translateX(0);

@@ -1,10 +1,8 @@
 import * as React from 'react'
-import {
-  setUpScrollAnimation,
-  sleepUntilAllImageLoaded
-} from './../util'
+import { sleep, sleepUntilAllImageLoaded } from './../util'
 import LoadingOverlay from './LoadingOverlay'
 import * as classNames from 'classnames'
+import IntersectionWrapper from './IntersectionWrapper'
 
 interface State {
   isLoading: boolean
@@ -17,13 +15,9 @@ export default class extends React.Component<{}, State> {
   }
 
   async componentDidMount() {
-    setUpScrollAnimation()
     await sleepUntilAllImageLoaded()
+    await sleep(1000)
     this.setState({ isLoading: false })
-  }
-
-  async componentDidUpdate() {
-    setUpScrollAnimation()
   }
 
   render() {
@@ -36,76 +30,106 @@ export default class extends React.Component<{}, State> {
         )}
       >
         <LoadingOverlay isLoading={isLoading} />
-        <div className='item animate'>
+        <IntersectionWrapper
+          disabled={isLoading}
+          className='item'
+        >
           <img
             className='await'
             src='http://placekitten.com/400/400'
             alt=''
           />
-        </div>
-        <div className='item animate'>
+        </IntersectionWrapper>
+        <IntersectionWrapper
+          disabled={isLoading}
+          className='item'
+        >
           <img
             className='await'
             src='http://placekitten.com/400/401'
             alt=''
           />
-        </div>
-        <div className='item animate'>
+        </IntersectionWrapper>
+        <IntersectionWrapper
+          disabled={isLoading}
+          className='item'
+        >
           <img
             className='await'
             src='http://placekitten.com/400/402'
             alt=''
           />
-        </div>
-        <div className='item animate'>
+        </IntersectionWrapper>
+        <IntersectionWrapper
+          disabled={isLoading}
+          className='item'
+        >
           <img
             className='await'
             src='http://placekitten.com/400/403'
             alt=''
           />
-        </div>
-        <div className='item animate'>
+        </IntersectionWrapper>
+        <IntersectionWrapper
+          disabled={isLoading}
+          className='item'
+        >
           <img
             className='await'
             src='http://placekitten.com/400/404'
             alt=''
           />
-        </div>
-        <div className='item animate'>
+        </IntersectionWrapper>
+        <IntersectionWrapper
+          disabled={isLoading}
+          className='item'
+        >
           <img
             className='await'
             src='http://placekitten.com/400/400'
             alt=''
           />
-        </div>
-        <div className='item animate'>
+        </IntersectionWrapper>
+        <IntersectionWrapper
+          disabled={isLoading}
+          className='item'
+        >
           <img
             className='await'
             src='http://placekitten.com/400/401'
             alt=''
           />
-        </div>
-        <div className='item animate'>
+        </IntersectionWrapper>
+        <IntersectionWrapper
+          disabled={isLoading}
+          className='item'
+        >
           <img
             className='await'
             src='http://placekitten.com/400/402'
             alt=''
           />
-        </div>
-        <div className='item animate'>
+        </IntersectionWrapper>
+        <IntersectionWrapper
+          disabled={isLoading}
+          className='item'
+        >
           <img
             className='await'
             src='http://placekitten.com/400/403'
             alt=''
           />
-        </div>
-        <div className='item animate'>
+        </IntersectionWrapper>
+        <IntersectionWrapper
+          disabled={isLoading}
+          className='item'
+        >
           <img
             className='await'
             src='http://placekitten.com/400/404'
             alt=''
           />
-        </div>
+        </IntersectionWrapper>
       </div>
     )
   }
