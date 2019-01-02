@@ -3,6 +3,7 @@ import { sleep, sleepUntilAllImageLoaded } from './../util'
 import LoadingOverlay from './LoadingOverlay'
 import * as classNames from 'classnames'
 import IntersectionWrapper from './IntersectionWrapper'
+import image from './../../images/icon_square.jpg'
 
 interface State {
   isLoading: boolean
@@ -34,11 +35,7 @@ export default class extends React.Component<{}, State> {
           disabled={isLoading}
           className='item'
         >
-          <img
-            className='await'
-            src='http://placekitten.com/400/400'
-            alt=''
-          />
+          <img className='await' src={image} alt='' />
         </IntersectionWrapper>
         <IntersectionWrapper
           disabled={isLoading}
@@ -97,36 +94,6 @@ export default class extends React.Component<{}, State> {
           <img
             className='await'
             src='http://placekitten.com/400/401'
-            alt=''
-          />
-        </IntersectionWrapper>
-        <IntersectionWrapper
-          disabled={isLoading}
-          className='item'
-        >
-          <img
-            className='await'
-            src='http://placekitten.com/400/402'
-            alt=''
-          />
-        </IntersectionWrapper>
-        <IntersectionWrapper
-          disabled={isLoading}
-          className='item'
-        >
-          <img
-            className='await'
-            src='http://placekitten.com/400/403'
-            alt=''
-          />
-        </IntersectionWrapper>
-        <IntersectionWrapper
-          disabled={isLoading}
-          className='item'
-        >
-          <img
-            className='await'
-            src='http://placekitten.com/400/404'
             alt=''
           />
         </IntersectionWrapper>

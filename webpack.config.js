@@ -29,8 +29,16 @@ module.exports = {
         use: 'pug-loader'
       },
       {
-        test: /\.(png|woff|woff2|eot|ttf|otf|svg)$/,
+        test: /\.(woff|woff2|eot|ttf|otf|svg)$/,
         use: 'url-loader?limit=100000'
+      },
+      {
+        test: /\.(jpg|jpeg|png)$/,
+        loader: 'file-loader',
+        options: {
+          name: '[name].[ext]',
+          outputPath: 'images'
+        }
       },
       {
         test: /\.json$/,
