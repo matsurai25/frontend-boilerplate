@@ -1,7 +1,8 @@
 {
   "scripts": {
     "build": "webpack",
-    "watch": "webpack -w"
+    "watch": "webpack -w",
+    "start": "webpack -w"
   },
   "devDependencies": {
     "@types/classnames": "^2.2.9",

@@ -1,11 +1,11 @@
 # 構成
-webpack + TypeScript + scss
+Webpack + TypeScript + styled-components
 
 # 開発
 ```
-yarn install
-yarn watch
-php -S localhost:8888
+npm i
+npm start
+php -S localhost:8888 public
 
-yarn build
+npm run build
 ```
