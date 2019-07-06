@@ -1,15 +1,16 @@
 import * as React from 'react'
-import styled from 'styled-components'
+import { Route, Redirect } from 'react-router'
+import IndexPage from '../pages/IndexPage'
+import { BrowserRouter } from 'react-router-dom'
+import { urls } from '../const'
 
 export default function() {
   return (
-    <div>
-      <Title>Title</Title>
-    </div>
+    <>
+      <BrowserRouter>
+        <Route path={urls.index} component={IndexPage} />
+        <Redirect from={'*'} to={urls.index} />
+      </BrowserRouter>
+    </>
   )
 }
-
-const Title = styled.div`
-  font-size: 40px;
-  font-weight: bold;
-`
