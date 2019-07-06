@@ -24,11 +24,6 @@ module.exports = {
         use: 'ts-loader'
       },
       {
-        test: /\.pug$/,
-        exclude: /node_modules/,
-        use: 'pug-loader'
-      },
-      {
         test: /\.(woff|woff2|eot|ttf|otf|svg)$/,
         use: 'url-loader?limit=100000'
       },
@@ -47,28 +42,16 @@ module.exports = {
       {
         test: /\.css$/,
         use: ['style-loader', 'css-loader']
-      },
-      {
-        test: /\.scss$/,
-        use: [
-          MiniCssExtractPlugin.loader,
-          'css-loader',
-          'sass-loader'
-        ]
       }
     ]
   },
   plugins: [
-    new HtmlWebpackPlugin({
-      template: 'src/index.pug',
-      minify: false
-    }),
     new MiniCssExtractPlugin({
       filename: 'css/bundle.css'
     })
   ],
   // import 文で .ts や .tsx ファイルを解決するため
   resolve: {
-    extensions: ['.ts', '.tsx', '.js', '.scss']
+    extensions: ['.ts', '.tsx', '.js']
   }
 }
