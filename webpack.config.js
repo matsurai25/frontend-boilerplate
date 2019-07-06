@@ -48,7 +48,8 @@ module.exports = {
   plugins: [
     new MiniCssExtractPlugin({
       filename: 'css/bundle.css'
-    })
+    }),
+    new HtmlWebpackPlugin()
   ],
   // import 文で .ts や .tsx ファイルを解決するため
   resolve: {
