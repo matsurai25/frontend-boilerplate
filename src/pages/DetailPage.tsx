@@ -10,7 +10,7 @@ type Props = RouteComponentProps
 function Page({}: Props) {
   return (
     <Wrapper>
-      <Title>INDEX</Title>
+      <Title>Detail</Title>
     </Wrapper>
   )
 }

@@ -13,7 +13,8 @@ module.exports = {
     // 出力するファイル名
     filename: 'js/bundle.js',
     // 出力先のパス（v2系以降は絶対パスを指定する必要がある）
-    path: path.join(__dirname, 'public')
+    path: path.join(__dirname, 'public'),
+    publicPath: '/'
   },
   module: {
     rules: [
