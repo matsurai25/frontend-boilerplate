@@ -5,7 +5,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const path = require('path')
 
 module.exports = {
-  mode: 'development',
+  mode: 'production',
   // エントリーポイントの設定
   entry: './src/index.ts',
   // 出力の設定

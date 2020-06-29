@@ -5,7 +5,4 @@ Webpack + TypeScript + styled-components
 ```
 npm i
 npm start
-php -S localhost:8888 public
-
-npm run build
 ```
